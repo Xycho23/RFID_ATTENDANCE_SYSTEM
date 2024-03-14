@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFID Attendance System - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Styles for login form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 350px;
+            padding: 40px;
+            background-color: #ffffff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 10px);
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff; /* Blue button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker shade of blue on hover */
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .intro {
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><i class="fas fa-user-lock icon"></i>PWD LOGIN SYSTEM</h1>
+    <p class="intro">Welcome to the RFID Attendance System. Please log in to access your dashboard.</p>
+    <p id="error" class="error"></p> <!-- Placeholder for error message -->
+    <form id="loginForm">
+        <label for="username"><i class="fas fa-user icon"></i>Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password"><i class="fas fa-lock icon"></i>Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="button" value="Login" onclick="login()">
+    </form>
+</div>
+
+<script>
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Here, you can perform login validation
+        // For simplicity, I'll assume a simple check
+        if (username === "admin" && password === "enhypenjay22") {
+            // Redirect to the dashboard
+            window.location.href = "dashboard.php";
+        } else {
+            document.getElementById("error").innerText = "Invalid username or password";
+        }
+    }
+</script>
+
+</body>
+</html>
